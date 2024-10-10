@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <script src="vega_lite_vis.js"></script>
+</head>
+
+<body>
+    <h1>Global Labour Force in 2023</h1>
+    <p>This dashboard explores the global labor force in 2023, examining key trends and statistics across various countries. By analyzing labor force participation rates and unemployment rates, we aim to identify patterns and insights that highlight the economic conditions and challenges faced by different nations. Understanding these dynamics is crucial for policymakers, businesses, and researchers seeking to improve labor market outcomes worldwide.
+    </p>
+
+    <div class="container">
+        <div id="choropleth_map"></div>
+    </div>
+    <br>
+
+    <h2>Analyzing the Correlation Between Labor Force Size and Unemployment Rates</h2>
+
+    <div class="scatter-container">
+        <div class="scatter-plot">
+            <div id="scatterplot_unemployment"></div>
+        </div>
+        <div class="text-content">
+            <p>
+                There is a weak negative correlation in the chart, indicating that as the unemployment rate increases, the labor force percentage tends to decrease.
+            </p>
+            <p>Notably, countries like <strong>Qatar</strong> and the <strong>United Arab Emirates</strong> exhibit high labor force participation alongside low unemployment rates, suggesting strong labor market conditions. In contrast, countries such as <strong>Djibouti</strong> and <strong>South Africa</strong> demonstrate high unemployment rates coupled with lower labor force percentages, highlighting significant challenges in their labor markets.</p>
+        </div>
+    </div>
+    <br>
+    
+
+    <h2>Comparative Analysis of Labor Force and Unemployment Rates</h2>
+
+    <div class="bar-charts-container">
+        <div class="bar-chart">
+            <div id="bar_chart_highest"></div>
+        </div>
+        <div class="donut-chart">
+            <div id="donut_chart_highest"></div>
+        </div>
+    </div>
+    <p><strong>Qatar</strong> stands out with the highest labor force participation rate of <strong>74.93%</strong>, significantly outperforming other countries such as <strong>Iceland</strong> (<strong>60.77%</strong>), <strong>Korea, Dem. People's Rep.</strong> (<strong>60.54%</strong>), <strong>Singapore</strong> (<strong>61.16%</strong>), and <strong>United Arab Emirates</strong> (<strong>70.07%</strong>). This indicates a robust labor market in <strong>Qatar</strong>, suggesting strong economic conditions and ample employment opportunities for its population. The high participation rate reflects favorable policies and an environment that supports workforce engagement.</p>
+    <br>
+
+    <div class="bar-charts-container">
+        <div class="bar-chart">
+            <div id="bar_chart_lowest"></div>
+        </div>
+        <div class="donut-chart">
+            <div id="donut_chart_lowest"></div>
+        </div>
+    </div>
+    <p>In contrast, the countries with the lowest labor force participation rates are led by <strong>Yemen, Rep.</strong> with only <strong>19.98%</strong>, followed closely by <strong>Somalia</strong> (<strong>18.06%</strong>), <strong>Mauritania</strong> (<strong>24.24%</strong>), <strong>Djibouti</strong> (<strong>22.49%</strong>), and <strong>Afghanistan</strong> (<strong>21.12%</strong>). These figures highlight significant challenges in their labor markets, likely stemming from economic instability, limited job opportunities, and broader socio-political issues. The low participation rates suggest that a substantial portion of the population is either unable or unwilling to engage in the labor market, necessitating urgent policy intervention.</p>
+    <br>
+
+</body>
+
+</html>

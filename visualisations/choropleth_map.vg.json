@@ -59,7 +59,7 @@
               "lookup": "properties.NAME",
               "from": {
                 "data": {
-                  "url": "https://raw.githubusercontent.com/YAPQIANTING/FIT3179-A2/main/finalised_data.csv",
+                  "url": "https://raw.githubusercontent.com/YAPQIANTING/FIT3179-A2/main/datas/country_labour_force_data.csv",
                   "format": {"type": "csv"}
                 },
                 "key": "Country Name",
@@ -164,7 +164,7 @@
       "mark": "line",
       "title": "Use this line chart to filter data by year",
       "data": {
-        "url": "https://raw.githubusercontent.com/YAPQIANTING/FIT3179-A2/main/world_labour_force_data.csv",
+        "url": "https://raw.githubusercontent.com/YAPQIANTING/FIT3179-A2/main/datas/world_labour_force_data.csv",
         "format": {"type": "csv"}
       },
       "params": [

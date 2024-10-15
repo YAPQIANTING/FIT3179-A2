@@ -10,18 +10,6 @@
         "format": {"type": "csv"}
       },
       "projection": {"type": "equalEarth"},
-      "encoding": { 
-        "transform": 
-        [
-          {
-          "filter": {"param": "brush"}
-          },
-          {
-              "aggregate": [{"op": "max", "field": "Year", "as": "Latest Year"}],
-              "groupby": ["properties.NAME"]
-          }
-        ]
-      },
       "layer": [
         {
           "data": {"sphere": true},
@@ -70,15 +58,7 @@
           ],
           "params": [
             {
-              "name": "hovered_country",
-              "select": {
-                "type": "point",
-                "fields": ["properties.NAME"],
-                "on": "mouseover"
-              }
-            },
-            {
-              "name": "selected_country",
+              "name": "country_select",
               "select": {"type": "point", "fields": ["properties.NAME"]}
             }
           ],
@@ -119,8 +99,7 @@
             ],
             "opacity": {
               "condition": [
-                {"param": "selected_country", "value": 1},
-                {"param": "hovered_country", "value": 0.5, "empty": false}
+                {"param": "country_select", "value": 1}              
               ],
               "value": 0.3
             }
@@ -154,49 +133,10 @@
           "encoding": {
             "longitude": {"field": "longitude"},
             "latitude": {"field": "latitude"},
-            "text": {"field": "countryName"}          }
+            "text": {"field": "countryName"}          
+          }
         }
       ]
-    },
-    {
-      "width": 900,
-      "height": 100,
-      "mark": "line",
-      "title": "Use this line chart to filter data by year",
-      "data": {
-        "url": "https://raw.githubusercontent.com/YAPQIANTING/FIT3179-A2/main/datas/world_labour_force_data.csv",
-        "format": {"type": "csv"}
-      },
-      "params": [
-        {
-          "name": "time_brush",
-          "select": {"type": "interval", "encodings": ["x"]}
-        }
-      ],
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "ordinal",
-          "timeUnit": "year",
-          "axis": {
-            "format": "%Y",
-            "grid": true
-          }
-        },
-        "y": {
-          "field": "Normalized Labour Force",
-          "type": "quantitative",
-          "scale": {
-            "domain": [0, 60],
-            "nice": true
-          },
-          "axis": {
-            "tickCount": 5,
-            "grid": false
-          },
-          "title": "Labour Force (%)"
-        }
-      }
     }
   ]
 }

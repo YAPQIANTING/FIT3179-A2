@@ -37,6 +37,13 @@
         "filter": "continent_selection == null || datum.Continent == continent_selection"
       }
     ],
+    "selection": {
+      "continent_highlight": {
+        "type": "multi",
+        "fields": ["Continent"],
+        "bind": "legend"
+      }
+    },
     "mark": "bar",
     "encoding": {
       "x": {
@@ -60,6 +67,10 @@
           "range": ["#fdae61", "#91bfdb", "#fee08b", "#4575b4", "#d73027"]
         },
         "legend": {"orient": "right"}
+      },
+      "opacity": {
+        "condition": {"selection": "continent_highlight", "value": 1},
+        "value": 0.3
       },
       "tooltip": [
         {"field": "Year", "type": "ordinal", "title": "Year"},

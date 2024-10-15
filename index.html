@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -16,54 +16,87 @@
 </head>
 
 <body>
-    <h1>Global Labour Force in 2023</h1>
-    <p>This dashboard explores the global labor force in 2023, examining key trends and statistics across various countries. By analyzing labor force participation rates and unemployment rates, we aim to identify patterns and insights that highlight the economic conditions and challenges faced by different nations. Understanding these dynamics is crucial for policymakers, businesses, and researchers seeking to improve labor market outcomes worldwide.
-    </p>
 
-    <div class="container">
+    <div class="title-container">
+        <h1>Global Labor Force Insights</h1>
+        <p>
+            Explore the global labor force with our dynamic, interactive dashboard!        
+        </p>
+    </div>
+    <br>
+
+    <div class="map-container">
+        <h3>Labour Force Participation Rate By Country</h3>
         <div id="choropleth_map"></div>
     </div>
     <br>
 
-    <h2>Analyzing the Correlation Between Labor Force Size and Unemployment Rates</h2>
-
-    <div class="scatter-container">
-        <div class="scatter-plot">
-            <div id="scatterplot_unemployment"></div>
-        </div>
-        <div class="text-content">
-            <p>
-                There is a weak negative correlation in the chart, indicating that as the unemployment rate increases, the labor force percentage tends to decrease.
-            </p>
-            <p>Notably, countries like <strong>Qatar</strong> and the <strong>United Arab Emirates</strong> exhibit high labor force participation alongside low unemployment rates, suggesting strong labor market conditions. In contrast, countries such as <strong>Djibouti</strong> and <strong>South Africa</strong> demonstrate high unemployment rates coupled with lower labor force percentages, highlighting significant challenges in their labor markets.</p>
+    <div class="stacked-bar-container">
+        <h3>Labour Force Participation Rate Trends By Continent</h3>
+        <div class="stacked-bar-chart-container">
+            <div id="stacked_bar_chart"></div>
+            <div class="side-analysis-text">
+                <p>
+                    From the stacked bar chart, it is obvious to say that <span style="color:#91bfdb; font-weight:bold;">Asia</span> and <span style="color:#fee08b; font-weight:bold;">Europe</span> consistently have the highest rates, followed by <span style="color:#fdae61; font-weight:bold;">Africa</span> and the <span style="color:#4575b4; font-weight:bold;">Americas</span>. A notable observation is the relative stability across all continents over the years, indicating consistent workforce engagement globally.
+                </p>
+                <br>
+                <p>
+                    However, subtle fluctuations, particularly a dip in <strong>2020</strong>, could suggest the impact of significant global events like the <strong>COVID-19 pandemic</strong> on labor markets. This trend allows us to compare workforce dynamics and understand how different regions responded to economic shifts.
+                </p>
+            </div>
         </div>
     </div>
     <br>
     
-
-    <h2>Comparative Analysis of Labor Force and Unemployment Rates</h2>
-
-    <div class="bar-charts-container">
-        <div class="bar-chart">
-            <div id="bar_chart_highest"></div>
-        </div>
-        <div class="donut-chart">
-            <div id="donut_chart_highest"></div>
-        </div>
-    </div>
-    <p><strong>Qatar</strong> stands out with the highest labor force participation rate of <strong>74.93%</strong>, significantly outperforming other countries such as <strong>Iceland</strong> (<strong>60.77%</strong>), <strong>Korea, Dem. People's Rep.</strong> (<strong>60.54%</strong>), <strong>Singapore</strong> (<strong>61.16%</strong>), and <strong>United Arab Emirates</strong> (<strong>70.07%</strong>). This indicates a robust labor market in <strong>Qatar</strong>, suggesting strong economic conditions and ample employment opportunities for its population. The high participation rate reflects favorable policies and an environment that supports workforce engagement.</p>
-    <br>
-
-    <div class="bar-charts-container">
-        <div class="bar-chart">
-            <div id="bar_chart_lowest"></div>
-        </div>
-        <div class="donut-chart">
-            <div id="donut_chart_lowest"></div>
+    <div class="trellis-container">
+        <h3>Labor Force Growth By Continent</h3>
+        <div class="chart-container">
+            <div id="trellis_area_chart"></div>
+            <div class="center-analysis-text">
+                <p>
+                    <span style="color:#91bfdb; font-weight:bold;">Asia</span> shows a steady increase in its labor force, leading globally, while <span style="color:#fdae61; font-weight:bold;">Africa</span> also demonstrates notable growth, potentially indicating expanding employment opportunities and economic activity. On the other hand, the <span style="color:#4575b4; font-weight:bold;">Americas</span>, <span style="color:#fee08b; font-weight:bold;">Europe</span>, and <span style="color:#d73027; font-weight:bold;">Oceania</span> show more modest growth, with <span style="color:#d73027; font-weight:bold;">Oceania</span> remaining relatively flat, reflecting its smaller population.
+                </p>
+                <br>
+                <p>
+                    The contrasting rates of growth provide insight into the economic development of these regions, with <span style="color:#fdae61; font-weight:bold;">Africa</span> and <span style="color:#91bfdb; font-weight:bold;">Asia</span> leading in terms of labor force expansion. The flat trend in <span style="color:#d73027; font-weight:bold;">Oceania</span> highlights its comparatively smaller contribution to the global labor pool.
+                </p>
+            </div>
         </div>
     </div>
-    <p>In contrast, the countries with the lowest labor force participation rates are led by <strong>Yemen, Rep.</strong> with only <strong>19.98%</strong>, followed closely by <strong>Somalia</strong> (<strong>18.06%</strong>), <strong>Mauritania</strong> (<strong>24.24%</strong>), <strong>Djibouti</strong> (<strong>22.49%</strong>), and <strong>Afghanistan</strong> (<strong>21.12%</strong>). These figures highlight significant challenges in their labor markets, likely stemming from economic instability, limited job opportunities, and broader socio-political issues. The low participation rates suggest that a substantial portion of the population is either unable or unwilling to engage in the labor market, necessitating urgent policy intervention.</p>
     <br>
+    
+    <div class="bump-container">
+        <h3>Unemployment Rate Shifts By Continent</h3>
+        <div class="bump-chart-container">
+            <div id="bump_chart"></div>
+            <div class="side-analysis-text">
+                <p>
+                    <span style="color:#d73027; font-weight:bold;">Oceania</span> consistently ranks first in having the lowest unemployment rates, while the <span style="color:#4575b4; font-weight:bold;">Americas</span> fluctuate and eventually rank highest post-<strong>2020</strong>.
+                </p>
+                <br>
+                <p>
+                    <span style="color:#91bfdb; font-weight:bold;">Asia</span> and <span style="color:#fee08b; font-weight:bold;">Europe</span> swap ranks a few times, showing some variability in their relative positions, while <span style="color:#fdae61; font-weight:bold;">Africa</span> remains relatively stable, maintaining a mid-range unemployment rate rank.
+                </p>
+                <br>
+                <p>
+                    The year <strong>2020</strong> has drastically affected unemployment rates, likely due to the global pandemic.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+    <div class="metadata-container">
+        <div class="center-analysis-text">
+            <p><strong>Created By:</strong> Yap Qian Ting (32846231)</p>
+            <p><strong>Updated By:</strong> 15/10/2024</p>
+            <br>
+
+            <p><strong>Dataset Sources:</strong></p>
+            <a href="https://databank.worldbank.org/source/health-nutrition-and-population-statistics#" target="_blank">World Bank Group</a>
+        </div>
+    </div>
+    <br>    
 
 </body>
 

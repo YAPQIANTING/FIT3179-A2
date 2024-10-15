@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Labour Force by Continent",
+        "anchor": "middle",
+        "align": "center"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/YAPQIANTING/FIT3179-A2/main/continent_data.csv",
+      "format": {"type": "csv"}
+    },
+    "facet": {
+      "field": "Continent",
+      "type": "nominal",
+      "title": "Continent"
+    },
+    "spec": {
+        "width": 170,
+        "height": 200,
+        "mark": {
+            "type": "area",
+            "interpolate": "monotone",
+            "line": true
+        },
+        "encoding": {
+            "x": {
+                "field": "Year",
+                "type": "temporal",
+                "title": "Year",
+                "axis": {
+                    "format": "%Y",
+                    "tickCount": 10,
+                    "grid": false
+                }
+            },
+            "y": {
+                "field": "Labour Force",
+                "type": "quantitative",
+                "title": "Labour Force"
+            },
+            "color": {
+                "field": "Continent",
+                "type": "nominal",
+                "legend": null,
+                "scale": {
+                    "domain": [
+                        "Africa", "Asia", "Europe", "Americas", "Oceania"
+                    ],
+                    "range": [
+                        "#fdae61", "#91bfdb", "#fee08b", "#4575b4", "#d73027"
+                    ]
+                }
+            },
+            "tooltip": [
+                {"field": "Year", "type": "temporal", "title": "Year"},
+                {"field": "Labour Force", "type": "quantitative", "title": "Labour Force", "format": ".0f"},
+                {"field": "Continent", "type": "nominal", "title": "Continent"}
+            ]
+        }
+    }
+}
+  

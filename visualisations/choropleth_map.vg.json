@@ -6,7 +6,7 @@
       "height": 400,
       "title": "Labour Force Participation Rate by Country",
       "data": {
-        "url": "https://raw.githubusercontent.com/YAPQIANTING/FIT3179-A2/main/finalised_data.csv",
+        "url": "https://raw.githubusercontent.com/YAPQIANTING/FIT3179-A2/main/datas/country_labour_force_data.csv",
         "format": {"type": "csv"}
       },
       "projection": {"type": "equalEarth"},
